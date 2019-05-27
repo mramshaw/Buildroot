@@ -2,6 +2,23 @@
 
 Experiments with [Buildroot](http://www.buildroot.org/)
 
+## Contents
+
+The contents are as follows:
+
+* [What is Buildroot](#what-is-buildroot)
+* [Source Code](#source-code)
+* [Surprises](#surprises)
+* [Configuration](#configuration)
+    * [Linux architecture and performance](#linux-architecture-and-performance)
+    * [Using a predefined configuration](#using-a-predefined-configuration)
+    * [Building a predefined configuration](#building-a-predefined-configuration)
+* [Reference](#reference)
+    * [Home Page](#home-page)
+    * [Source Code Home Page](#source-code-home-page)
+    * [User Manual](#user-manual)
+* [Credits](#credits)
+
 ## What is Buildroot
 
 From http://www.buildroot.org/
@@ -55,6 +72,23 @@ $
 ```
 
 [The options include arm, bananapi, beaglebone, chromebook, raspberrypi and many others.]
+
+#### Linux architecture and performance
+
+Linux is what is known as a [microkernel](http://en.wikipedia.org/wiki/Microkernel) architecture.
+The kernel is the bare minimum required to run the computer so that accessing hardware requires
+loading device drivers.
+
+Device drivers generally run in __kernel space__ (as opposed to [user space](http://en.wikipedia.org/wiki/User_space))
+as this is generally needed to deliver the level of performance modern applications require.
+
+For additional performance, compiling needed device drivers into a kernel is fairly trivial.
+
+The difficulty comes in specifying the device drivers to compile into the kernel so as to
+deliver increased performance under a normal workload. There can be what seem like hundreds
+of options to specify.
+
+This is where Buildroot really shines, as it offers a rich selection of predefined configurations.
 
 #### Using a predefined configuration
 
