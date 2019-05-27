@@ -79,14 +79,15 @@ Linux is what is known as a [microkernel](http://en.wikipedia.org/wiki/Microkern
 The kernel is the bare minimum required to run the computer so that accessing hardware requires
 loading device drivers.
 
-Device drivers generally run in __kernel space__ (as opposed to [user space](http://en.wikipedia.org/wiki/User_space))
-as this is generally needed to deliver the level of performance modern applications require.
+Device drivers generally run in __kernel space__ (as opposed to [user space](http://en.wikipedia.org/wiki/User_space),
+sometimes referred to as __userland__) as this is generally needed to deliver the level of
+performance modern applications require.
 
 For additional performance, compiling needed device drivers into a kernel is fairly trivial.
 
 The difficulty comes in specifying the device drivers to compile into the kernel so as to
 deliver increased performance under a normal workload. There can be what seem like hundreds
-of options to specify.
+of options to specify, as well as dependencies to sort through.
 
 This is where Buildroot really shines, as it offers a rich selection of predefined configurations.
 
